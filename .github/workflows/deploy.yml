@@ -1,0 +1,33 @@
+name: Deploy Portfolio
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Verify Flask App
+        run: |
+          python -m py_compile app.py
+          python -m py_compile routes.py
+          python -m py_compile models.py
+
+      - name: Build Successful
+        run: echo "Portfolio build completed successfully!"
