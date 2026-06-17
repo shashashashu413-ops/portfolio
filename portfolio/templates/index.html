@@ -1,0 +1,630 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<!-- NAVBAR -->
+
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+
+    <div class="container">
+
+        <a class="navbar-brand fw-bold" href="#">
+            Shashank
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+
+            <span class="navbar-toggler-icon"></span>
+
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+
+            <div class="navbar-nav ms-auto">
+
+                <a class="nav-link" href="#">Home</a>
+                <a class="nav-link" href="#about">About</a>
+                <a class="nav-link" href="#skills">Skills</a>
+                <a class="nav-link" href="#projects">Projects</a>
+                <a class="nav-link" href="#contact">Contact</a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</nav>
+
+<!-- HERO SECTION -->
+
+<section class="hero">
+
+    <div class="container">
+
+        <div class="row align-items-center">
+
+            <!-- LEFT -->
+
+            <div class="col-lg-6 hero-left" data-aos="fade-right">
+
+                <h4>Hello, I'm</h4>
+
+                <h1>
+
+                    Shashank
+
+                    <span>
+                        R M
+                    </span>
+
+                </h1>
+
+                <h2>
+
+                    I'm a
+
+                    <span id="typing"></span>
+
+                </h2>
+
+                <p>
+
+                    Passionate about Python,
+                    Flask,
+                    Web Development
+                    and Artificial Intelligence.
+
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a href="/static/resume/resume.jpg" target="_blank" class="btn hero-btn">
+                        View Resume
+                    </a>
+
+                    <a href="/static/resume/resume.jpg" download class="btn hero-btn">
+                        Download Resume
+                    </a>
+
+                    <a href="#projects" class="btn hero-btn">
+                        View My Work
+                    </a>
+
+                </div>
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+            </div>
+
+            <!-- RIGHT -->
+
+            <div class="col-lg-6 hero-right" data-aos="zoom-in">
+
+                <div class="image-frame">
+
+                    <img src="{{ url_for('static', filename='images/profile.jpg') }}" alt="Profile">
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ABOUT SECTION -->
+
+<section id="about" class="about-section">
+
+    <div class="container">
+
+        <div class="row align-items-center">
+
+            <!-- LEFT -->
+
+            <div class="col-lg-6" data-aos="fade-right">
+
+
+
+                <h2 class="about-title">
+                    About Me
+                </h2>
+
+                <p class="about-text">
+
+                    Hello! I'm Shashank R M,
+                    a passionate student and aspiring
+                    Python Developer.
+
+                </p>
+
+                <p class="about-text">
+
+                    I have strong interest in
+                    Flask,
+                    Web Development,
+                    APIs,
+                    Databases
+                    and Artificial Intelligence.
+
+                </p>
+
+                <p class="about-text">
+
+                    My goal is to become a skilled
+                    Full Stack Python Developer and
+                    contribute to innovative software
+                    solutions.
+
+                </p>
+
+            </div>
+
+            <!-- RIGHT -->
+
+            <div class="col-lg-6" data-aos="fade-left">
+
+                <div class="stats-box">
+
+                    <div class="stat-card"
+                        onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'})">
+
+                        <h2>4+</h2>
+                        <p>Projects</p>
+
+                    </div>
+
+                    <div class="stat-card"
+                        onclick="document.getElementById('certificates').scrollIntoView({behavior:'smooth'})">
+
+                        <h2>4+</h2>
+                        <p>Certificates</p>
+
+                    </div>
+
+                    <div class="stat-card"
+                        onclick="document.getElementById('experience').scrollIntoView({behavior:'smooth'})">
+
+                        <h2>1+</h2>
+                        <p>Internships</p>
+
+                    </div>
+
+                    <div class="stat-card">
+
+                        <h2>100+</h2>
+
+                        <p>Hours Coding</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<section id="skills" class="skills-section">
+
+    <div class="container">
+
+        <h2 class="section-heading">
+            Skills
+        </h2>
+
+        <div class="skills-grid">
+
+            <div class="skill-card" data-bs-toggle="modal" data-bs-target="#pythonModal">
+                <div class="skill-icon">🐍</div>
+                <h4>Python</h4>
+            </div>
+
+            <div class="skill-card" data-bs-toggle="modal" data-bs-target="#flaskModal">
+                <div class="skill-icon">⚡</div>
+                <h4>Flask</h4>
+            </div>
+
+            <div class="skill-card" data-bs-toggle="modal" data-bs-target="#htmlModal">
+                <div class="skill-icon">🌐</div>
+                <h4>HTML</h4>
+            </div>
+
+            <div class="skill-card" data-bs-toggle="modal" data-bs-target="#cssModal">
+                <div class="skill-icon">🎨</div>
+                <h4>CSS</h4>
+            </div>
+
+            <div class="skill-card" data-bs-toggle="modal" data-bs-target="#sqlModal">
+                <div class="skill-icon">🗄️</div>
+                <h4>SQL</h4>
+            </div>
+
+            <div class="skill-card" data-bs-toggle="modal" data-bs-target="#aiModal">
+                <div class="skill-icon">🤖</div>
+                <h4>AI</h4>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<div class="modal fade" id="pythonModal">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content bg-dark text-white">
+            <div class="modal-header">
+                <h5>🐍 Python</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <p>Python is my primary programming language.</p>
+
+                <ul>
+                    <li>Flask Development</li>
+                    <li>REST APIs</li>
+                    <li>Automation Scripts</li>
+                    <li>SQLite Database</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<section id="projects">
+
+    <div class="container">
+
+        <h2 class="section-heading">
+
+            Projects
+
+        </h2>
+
+        <div class="row">
+
+            {% for project in projects %}
+
+            <div class="col-lg-4 mb-4">
+
+                <div class="project-card">
+
+                    <img src="{{ project.image }}" class="img-fluid">
+
+                    <h3>
+
+                        {{ project.title }}
+
+                    </h3>
+
+                    <p>
+
+                        {{ project.description }}
+
+                    </p>
+
+                    <a href="{{ project.github_link }}" target="_blank" class="btn btn-primary">
+
+                        GitHub
+
+                    </a>
+
+                </div>
+
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+</section>
+<section id="certificates">
+
+    <div class="container">
+
+        <h2 class="section-heading">
+            Certificates
+        </h2>
+
+        <div class="row">
+
+            {% for certificate in certificates %}
+
+            <div class="col-lg-4 mb-4">
+
+                <div class="project-card text-center">
+
+                    <img src="{{ url_for('static',
+                    filename='images/certificates/' + certificate.file) }}" class="img-fluid rounded certificate-img">
+
+                    <h4 class="mt-3">
+                        {{ certificate.name }}
+                    </h4>
+
+                    <a href="{{ url_for('static',
+filename='images/certificates/' + certificate.file) }}" target="_blank" class="btn btn-primary">
+
+                        Open Certificate
+
+                    </a>
+
+                </div>
+
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+    <div class="modal fade" id="flaskModal">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content bg-dark text-white">
+                <div class="modal-header">
+                    <h5>⚡ Flask</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Flask framework for backend development.</p>
+
+                    <ul>
+                        <li>Routing</li>
+                        <li>Templates</li>
+                        <li>SQLAlchemy</li>
+                        <li>Authentication</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="htmlModal">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content bg-dark text-white">
+                <div class="modal-header">
+                    <h5>🌐 HTML</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+
+                    <p>HTML is the structure of every website.</p>
+
+                    <ul>
+                        <li>Semantic HTML5</li>
+                        <li>Forms</li>
+                        <li>Tables</li>
+                        <li>SEO Friendly Markup</li>
+                        <li>Bootstrap Integration</li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+<section id="experience">
+
+    <div class="container">
+
+        <h2 class="section-heading">
+            Experience
+        </h2>
+
+
+
+        <!-- Internship Certificate Only Once -->
+
+        <div class="certificate-card internship-card">
+
+            <img src="{{ url_for('static',
+        filename='images/certificates/internship_certificate.jpg') }}" class="certificate-img"
+                alt="Internship Certificate">
+
+            <h3>
+                Internship Certificate
+            </h3>
+
+            <a href="{{ url_for('static',
+        filename='images/certificates/internship_certificate.jpg') }}" target="_blank" class="btn btn-primary">
+
+                View Certificate
+
+            </a>
+
+        </div>
+
+</section>
+<section id="contact">
+
+    <div class="container">
+
+        <h2 class="section-heading">
+            Contact
+        </h2>
+
+        <div class="contact-grid">
+
+            <div class="contact-card">
+
+                <i class="fas fa-envelope"></i>
+
+                <h4>Email</h4>
+
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=shashashashu413@gmail.com" target="_blank"
+                    class="contact-link">
+                    Send Mail
+                </a>
+
+            </div>
+
+            <div class="contact-card">
+
+                <i class="fas fa-phone"></i>
+
+                <h4>Phone</h4>
+
+                <a href="https://wa.me/919449974481?text=Hello%20Shashank" target="_blank" class="contact-link">
+                    Contact Me
+                </a>
+
+            </div>
+
+            <div class="contact-card">
+
+                <i class="fab fa-github"></i>
+
+                <h4>GitHub</h4>
+
+                <a href="https://github.com/shashashashu413-ops" target="_blank">
+
+                    View Profile
+
+                </a>
+
+            </div>
+
+            <div class="contact-card">
+
+                <i class="fab fa-linkedin"></i>
+
+                <h4>LinkedIn</h4>
+
+                <a href="https://www.linkedin.com/in/mr-shashank-r-m-a4621a417/">
+
+                    View Profile
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<div class="modal fade" id="cssModal">
+
+    ```
+    <div class="modal-dialog modal-dialog-centered">
+
+        <div class="modal-content bg-dark text-white">
+
+            <div class="modal-header">
+
+                <h5>🎨 CSS</h5>
+
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal">
+                </button>
+
+            </div>
+
+            <div class="modal-body">
+
+                <ul>
+                    <li>Flexbox</li>
+                    <li>CSS Grid</li>
+                    <li>Animations</li>
+                    <li>Transitions</li>
+                    <li>Responsive Design</li>
+                    <li>Bootstrap 5</li>
+                </ul>
+
+                <p>
+                    Experience: Intermediate
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+    ```
+
+</div>
+
+<div class="modal fade" id="sqlModal">
+
+    ```
+    <div class="modal-dialog modal-dialog-centered">
+
+        <div class="modal-content bg-dark text-white">
+
+            <div class="modal-header">
+
+                <h5>🗄️ SQL</h5>
+
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal">
+                </button>
+
+            </div>
+
+            <div class="modal-body">
+
+                <ul>
+                    <li>SQLite</li>
+                    <li>CRUD Operations</li>
+                    <li>Table Relationships</li>
+                    <li>Database Design</li>
+                    <li>Query Optimization Basics</li>
+                </ul>
+
+                <p>
+                    Experience: Intermediate
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+    ```
+
+</div>
+
+<div class="modal fade" id="aiModal">
+
+    ```
+    <div class="modal-dialog modal-dialog-centered">
+
+        <div class="modal-content bg-dark text-white">
+
+            <div class="modal-header">
+
+                <h5>🤖 Artificial Intelligence</h5>
+
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal">
+                </button>
+
+            </div>
+
+            <div class="modal-body">
+
+                <ul>
+                    <li>Prompt Engineering</li>
+                    <li>AI Chatbots</li>
+                    <li>OpenAI API</li>
+                    <li>Automation Workflows</li>
+                    <li>Machine Learning Basics</li>
+                </ul>
+
+                <p>
+                    Experience: Beginner to Intermediate
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+    ```
+
+</div>
+
+
+{% endblock %}
